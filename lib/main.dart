@@ -1,40 +1,19 @@
 import 'package:flutter/material.dart';
+import './text_control.dart';
 
-class Counter extends StatefulWidget {
-  const Counter();
-
-  @override
-  State<Counter> createState() => _CounterState();
+main() {
+  runApp(MyApp());
 }
 
-class _CounterState extends State<Counter> {
-  int _counter = 0;
-
-  void _increment() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Welcome')),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Text('Count: $_counter'),
-          const SizedBox(width: 16),
-          ElevatedButton(
-            onPressed: _increment,
-            child: const Text('Increment'),
-          ),
-        ],
+    return MaterialApp(
+        home: Scaffold(
+      appBar: AppBar(
+        title: Text('Assignment 1'),
       ),
-    );
+      body: TextControl(),
+    ));
   }
-}
-
-void main() {
-  runApp(const MaterialApp(home: Counter()));
 }
